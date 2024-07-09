@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://dx6tgddq1gn82"]
+
+[ext_resource type="FontFile" uid="uid://duvty752l1mm0" path="res://Quicksand-VariableFont_wght.ttf" id="1_6rpx6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pe1sl"]
+font = ExtResource("1_6rpx6")
+font_size = 61
+
+[sub_resource type="LabelSettings" id="LabelSettings_0flbq"]
+font = ExtResource("1_6rpx6")
+font_size = 21
+font_color = Color(0.252028, 0.252028, 0.252028, 1)
+
+[node name="Main UI" type="CanvasLayer"]
+
+[node name="TextGroup" type="Control" parent="."]
+layout_mode = 3
+anchor_left = 0.462
+anchor_right = 0.462
+offset_left = -297.066
+offset_right = -257.066
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="TextGroup"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 53.0
+offset_right = 602.0
+offset_bottom = 131.0
+text = "Dyce"
+label_settings = SubResource("LabelSettings_pe1sl")
+horizontal_alignment = 1
+
+[node name="Title2" type="Label" parent="TextGroup"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 132.0
+offset_right = 601.0
+offset_bottom = 231.0
+text = "Tap to roll"
+label_settings = SubResource("LabelSettings_0flbq")
+horizontal_alignment = 1

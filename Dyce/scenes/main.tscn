@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ot8124jqclo5"]
+
+[ext_resource type="ArrayMesh" uid="uid://cnupqol16qq20" path="res://dice/dice.obj" id="1_t0jxa"]
+[ext_resource type="PackedScene" uid="uid://dx6tgddq1gn82" path="res://scenes/ui.tscn" id="2_jtx5n"]
+[ext_resource type="PackedScene" uid="uid://5uthfhs7l6pv" path="res://scenes/dice_animation.tscn" id="3_560gc"]
+
+[node name="Dice" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+process_priority = -1
+transform = Transform3D(0.803857, 0.127729, -0.580947, 0, 0.976672, 0.214735, 0.594823, -0.172616, 0.785105, -4.709, 2.08, 5.884)
+current = true
+
+[node name="Dice" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.651969, 0, 0.115393)
+visible = false
+mesh = ExtResource("1_t0jxa")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.100886, -0.899653, -0.424791, 0.839618, 0.306043, -0.448754, 0.533727, -0.311389, 0.78624, -3.62342, 3.24972, 4.28979)
+light_energy = 0.61
+light_volumetric_fog_energy = 16.0
+light_angular_distance = 21.4
+
+[node name="Main UI" parent="." instance=ExtResource("2_jtx5n")]
+
+[node name="DiceAnimation" parent="." instance=ExtResource("3_560gc")]
