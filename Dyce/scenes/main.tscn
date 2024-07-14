@@ -24,4 +24,5 @@ light_angular_distance = 21.4
 
 [node name="Main UI" parent="." instance=ExtResource("2_jtx5n")]
 
-[node name="DiceAnimation" parent="." instance=ExtResource("3_560gc")]
+[node name="DiceAnimation" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_560gc")]
+camera = NodePath("../Camera3D")

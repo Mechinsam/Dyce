@@ -7,4 +7,4 @@
 script = ExtResource("2_7lef6")
 
 [node name="Cube" parent="RootNode" index="0"]
-transform = Transform3D(71.4818, 69.9064, -1.85597, -43.6706, 46.6962, 76.8917, 54.6189, -54.1531, 63.9079, 0, 0, 0)
+transform = Transform3D(99.4831, -10.1542, -4.43856e-07, 3.9443e-29, -4.37114e-06, 100, -10.1542, -99.4831, -4.34854e-06, 0, 0, 0)
