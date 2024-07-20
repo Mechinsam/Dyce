@@ -2,7 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://cnupqol16qq20" path="res://dice/dice.obj" id="1_t0jxa"]
 [ext_resource type="PackedScene" uid="uid://dx6tgddq1gn82" path="res://scenes/ui.tscn" id="2_jtx5n"]
-[ext_resource type="PackedScene" uid="uid://5uthfhs7l6pv" path="res://scenes/dice_animation.tscn" id="3_560gc"]
+[ext_resource type="Script" path="res://dice.gd" id="3_smfq4"]
 
 [node name="Dice" type="Node3D"]
 
@@ -24,5 +24,6 @@ light_angular_distance = 21.4
 
 [node name="Main UI" parent="." instance=ExtResource("2_jtx5n")]
 
-[node name="DiceAnimation" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("3_560gc")]
-camera = NodePath("../Camera3D")
+[node name="Dice2" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_t0jxa")
+script = ExtResource("3_smfq4")

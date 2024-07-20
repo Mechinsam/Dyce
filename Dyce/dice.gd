@@ -1,34 +1,22 @@
-extends Node
+extends MeshInstance3D
+
 
 var rng = RandomNumberGenerator.new()
 var roll = 0
 @export var camera : Camera3D
+@export var ui : CanvasLayer
+
+var rolls = [
+	Vector3(-0.123856, -0.7, 0),
+	Vector3(0, 4.01752, 0.117129),
+	Vector3(-0.150088, -5.418769, 4.447003),
+	Vector3(0.087665, 7.16221, 1.363888),
+	Vector3(0.204197, 8.783293, 1.562659),
+	Vector3(4.710738, 1.030179, -0.104536)
+]
 
 func _process(delta):
 	if Input.is_action_just_pressed("roll"):
-		var x : AnimationPlayer
-		roll = 1#rng.randi_range(1, 6)
-		print(roll)
-		#$AnimationPlayer.play("Cube|CubeAction")
-		
-		#$RootNode/Cube.look_at(camera.global_transform.origin)
+		roll = rng.randi_range(1, 6)
 	
-	$AnimationPlayer.stop()
-	
-	if Input.is_key_pressed(KEY_W):
-		$RootNode/Cube.rotation.y += 1 * delta
-	
-	match roll:
-		1:
-			$RootNode/Cube.rotation = Vector3(0, 0.1, 0)
-	
-	"""match roll:
-		1:
-			$RootNode/Cube.rotation.x = 89.55
-		2:
-			$RootNode/Cube.rotation.x = 89.55
-			$RootNode/Cube.rotation.z = 4.6
-		3:
-			pass
-		4:
-			$RootNode/Cube.rotation.y = 0.3"""
+	rotation = rotation.lerp(rolls[roll-1], 0.5)
