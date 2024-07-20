@@ -11,11 +11,6 @@ process_priority = -1
 transform = Transform3D(0.803857, 0.127729, -0.580947, 0, 0.976672, 0.214735, 0.594823, -0.172616, 0.785105, -4.709, 2.08, 5.884)
 current = true
 
-[node name="Dice" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.651969, 0, 0.115393)
-visible = false
-mesh = ExtResource("1_t0jxa")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.100886, -0.899653, -0.424791, 0.839618, 0.306043, -0.448754, 0.533727, -0.311389, 0.78624, -3.62342, 3.24972, 4.28979)
 light_energy = 0.61
@@ -24,6 +19,7 @@ light_angular_distance = 21.4
 
 [node name="Main UI" parent="." instance=ExtResource("2_jtx5n")]
 
-[node name="Dice2" type="MeshInstance3D" parent="."]
+[node name="Dice2" type="MeshInstance3D" parent="." node_paths=PackedStringArray("ui")]
 mesh = ExtResource("1_t0jxa")
 script = ExtResource("3_smfq4")
+ui = NodePath("../Main UI")

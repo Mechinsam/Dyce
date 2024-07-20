@@ -3,7 +3,6 @@ extends MeshInstance3D
 
 var rng = RandomNumberGenerator.new()
 var roll = 0
-@export var camera : Camera3D
 @export var ui : CanvasLayer
 
 var rolls = [
@@ -18,5 +17,6 @@ var rolls = [
 func _process(delta):
 	if Input.is_action_just_pressed("roll"):
 		roll = rng.randi_range(1, 6)
+		ui.get_node("Label").text = "You rolled a " + str(roll) + ""
 	
 	rotation = rotation.lerp(rolls[roll-1], 0.5)
